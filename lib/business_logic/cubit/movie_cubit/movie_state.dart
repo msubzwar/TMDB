@@ -1,6 +1,22 @@
 part of 'movie_cubit.dart';
 
-@immutable
-abstract class MovieState {}
+class MovieState {
+  late List<Movie> popularMovies = [];
+  late List<Movie> topMovies = [];
+  late List<Movie> recommendedMovies = [];
+  late List<Movie> myRatedMovies = [];
+  late List<Movie> searchMovies = [];
 
-class MovieInitial extends MovieState {}
+  MovieState(
+      {popularMovies,
+      topMovies,
+      recommendedMovies,
+      myRatedMovies,
+      searchMovie});
+}
+
+class MovieLoadingState extends MovieState {}
+
+class MovieTopMovieLoadingState extends MovieState {}
+
+class MoviesLoadedState extends MovieState {}
